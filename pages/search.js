@@ -2,10 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
+import { searchHistoryAtom } from "../store.js";
 
 export default function AdvancedSearch() {
   const router = useRouter();
-
+  const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const {
     register,
     handleSubmit,
@@ -34,6 +35,7 @@ export default function AdvancedSearch() {
     queryString += `&isOnView=${data.isOnView || false}`;
     queryString += `&isHighlight=${data.isHighlight || false}`;
     queryString += `&q=${encodeURIComponent(data.searchQuery)}`;
+    setSearchHistory((searchHistory) => [...searchHistory, queryString]);
     router.push(`/artwork?${queryString}`);
     reset();
   };

@@ -2,16 +2,19 @@ import React, { useState } from "react";
 import { Button, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
+import { searchHistoryAtom } from "../store";
 const MainNav = () => {
   const router = useRouter();
-
+  const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const [isExpanded, setIsExpanded] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsExpanded(false);
     const searchField = e.target.elements.search.value;
-    const query = `/artwork?title=true&q=${searchField}`;
-    router.push(query);
+    const query = `title=true&q=${searchField}`;
+    setSearchHistory((current) => [...current, query]);
+    router.push(`/artwork?${query}`);
   };
   return (
     <>
