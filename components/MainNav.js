@@ -31,10 +31,18 @@ const MainNav = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="basic-navbar-nav">
             <Link href="/" passHref legacyBehavior>
-              <Nav.Link onClick={() => setIsExpanded(false)}>Home</Nav.Link>
+              <Nav.Link
+                active={router.pathname === "/"}
+                onClick={() => setIsExpanded(false)}
+              >
+                Home
+              </Nav.Link>
             </Link>
             <Link href="/search" passHref legacyBehavior>
-              <Nav.Link onClick={() => setIsExpanded(false)}>
+              <Nav.Link
+                active={router.pathname === "/search"}
+                onClick={() => setIsExpanded(false)}
+              >
                 Advanced Search
               </Nav.Link>
             </Link>
@@ -54,7 +62,7 @@ const MainNav = () => {
             &nbsp;
             <NavDropdown title="User Name" id="basic-nav-dropdown">
               <Link href="/favourites" passHref legacyBehavior>
-                <Nav.Link>
+                <Nav.Link active={router.pathname === "/favourites"}>
                   <NavDropdown.Item
                     href="#action/3.1"
                     onClick={() => setIsExpanded(false)}
@@ -64,7 +72,7 @@ const MainNav = () => {
                 </Nav.Link>
               </Link>
               <Link href="/history" passHref legacyBehavior>
-                <Nav.Link>
+                <Nav.Link active={router.pathname === "/history"}>
                   <NavDropdown.Item
                     href="#action/3.2"
                     onClick={() => setIsExpanded(false)}

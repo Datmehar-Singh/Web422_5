@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
 import { searchHistoryAtom } from "../store.js";
 
 export default function AdvancedSearch() {

@@ -8,12 +8,13 @@
 
 #basic-nav-dropdown {
   margin-right: 5rem;
-  color: #ffffff;
+  color: rgb(225, 215, 215);
 }
 
 .navbar-nav > .nav-link {
-  color: #f8f8f8;
+  color: rgb(171, 156, 156);
 }
+
 .nav-form {
   margin-left: auto;
   margin-right: 1rem;
