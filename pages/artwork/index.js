@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Error from "next/error";
 import ArtworkCard from "../../components/ArtworkCard";
+import validObjectIDList from "../../public/data/validObjectIDList.json";
 
 const PER_PAGE = 12;
 
@@ -26,9 +27,12 @@ export default function ArtHome() {
 
   useEffect(() => {
     if (data != null && data != undefined) {
+      let validResults = validObjectIDList.objectIDs.filter((x) =>
+        data.objectIDs?.includes(x)
+      );
       let results = [];
-      for (let i = 0; i < data?.objectIDs?.length; i += PER_PAGE) {
-        const chunk = data?.objectIDs.slice(i, i + PER_PAGE);
+      for (let i = 0; i < validResults.length; i += PER_PAGE) {
+        const chunk = validResults.slice(i, i + PER_PAGE);
         results.push(chunk);
       }
       setArtworkList(results);
