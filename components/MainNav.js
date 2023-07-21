@@ -19,7 +19,7 @@ const MainNav = () => {
   return (
     <>
       <Navbar
-        expand="md"
+        expand="lg"
         expanded={isExpanded}
         className="fixed-top navbar-dark bg-primary"
       >
@@ -60,6 +60,16 @@ const MainNav = () => {
                     onClick={() => setIsExpanded(false)}
                   >
                     Favourites
+                  </NavDropdown.Item>
+                </Nav.Link>
+              </Link>
+              <Link href="/history" passHref legacyBehavior>
+                <Nav.Link>
+                  <NavDropdown.Item
+                    href="#action/3.2"
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    Search History
                   </NavDropdown.Item>
                 </Nav.Link>
               </Link>
