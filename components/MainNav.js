@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, Nav, Navbar } from "react-bootstrap";
+import { Button, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 const MainNav = () => {
@@ -49,6 +49,18 @@ const MainNav = () => {
               </Button>
             </Form>
             &nbsp;
+            <NavDropdown title="User Name" id="basic-nav-dropdown">
+              <Link href="/favourites" passHref legacyBehavior>
+                <Nav.Link>
+                  <NavDropdown.Item
+                    href="#action/3.1"
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    Favourites
+                  </NavDropdown.Item>
+                </Nav.Link>
+              </Link>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
