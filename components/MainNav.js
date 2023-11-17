@@ -21,9 +21,9 @@ const MainNav = () => {
       <Navbar
         expand="lg"
         expanded={isExpanded}
-        className="fixed-top navbar-dark bg-primary"
+        className="bg-dark navbar-dark fixed-top"
       >
-        <Navbar.Brand>Mayank Kumar</Navbar.Brand>
+        <Navbar.Brand>Datmehar Singh</Navbar.Brand>
         <Navbar.Toggle
           onClick={() => setIsExpanded(!isExpanded)}
           aria-controls="basic-navbar-nav"
@@ -60,6 +60,7 @@ const MainNav = () => {
               </Button>
             </Form>
             &nbsp;
+          
             <NavDropdown title="User Name" id="basic-nav-dropdown">
               <Link href="/favourites" passHref legacyBehavior>
                 <Nav.Link active={router.pathname === "/favourites"}>
@@ -82,6 +83,7 @@ const MainNav = () => {
                 </Nav.Link>
               </Link>
             </NavDropdown>
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>

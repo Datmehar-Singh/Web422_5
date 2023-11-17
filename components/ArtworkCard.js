@@ -19,7 +19,7 @@ const ArtworkCard = ({ objectID }) => {
   const { primaryImageSmall, title, objectDate, classification, medium } = data;
 
   return (
-    <Card>
+    <Card className="h-100">
       <Card.Img
         src={
           primaryImageSmall ||

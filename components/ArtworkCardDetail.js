@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useSWR from "swr";
 import { Card, Button } from "react-bootstrap";
-import Link from "next/link";
 import Error from "next/error";
 import { useAtom } from "jotai";
 import { favouritesAtom } from "../store.js";
